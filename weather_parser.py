@@ -112,18 +112,7 @@
 # }
 # weather_intensity = weather_data['response']['precipitation']['intensity']
 # if weather_intensity in weather_intensity_dict:
-#     print(f'нтенсивность - {weather_intensity_dict[weather_intensity]}')
+#     print(f'интенсивность - {weather_intensity_dict[weather_intensity]}')
 # else:
 #     print('Что то неизвестное')
 # # pprint.pprint(get_info_about_city())
-import requests
-from bs4 import BeautifulSoup
-pages = [2,307]
-url = "https://biblioteka-online.info/book/piraty-ledovogo-morya/reader/{}/"
-for page in pages:
-  response = requests.get(url.format(page))
-  soup = BeautifulSoup(response.content, 'html.parser')
-  quotes = soup.find_all(class_='article_books_cn')
-  for elem in quotes:
-      print('-'*20)
-      print(elem.text)

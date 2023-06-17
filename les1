@@ -1,0 +1,13 @@
+string= input("Введите строку: ")
+string = string.replace(" ", "").lower()
+# print(string)
+
+string_palid = string[::-1]
+# print(string_palid)
+def string_check(string, string_palid):
+    if string == string_palid:
+        return True
+
+    else:
+        return False
+print(string_check(string, string_palid))
