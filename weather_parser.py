@@ -116,3 +116,30 @@
 # else:
 #     print('Что то неизвестное')
 # # pprint.pprint(get_info_about_city())
+
+# import requests
+# from bs4 import BeautifulSoup
+    
+# url = "https://biblioteka-online.info/book/piraty-ledovogo-morya/reader/216/"
+# response = requests.get(url)
+
+# soup = BeautifulSoup(response.content, 'html.parser')
+
+# quotes = soup.find_all(class_='article_books_cn   ')
+
+# for elem in quotes:
+#     print('-'*20)
+#     print(elem.text)
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://old-album.ru/contacts/'
+response = requests.get(url)
+
+soup = BeautifulSoup(response.content, 'html.parser')
+
+text = soup.find_all(class_='description')
+print(text)
+
+
